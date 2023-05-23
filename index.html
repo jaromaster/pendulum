@@ -7,10 +7,16 @@
     </head>
     <body>
         <div>
+            <label for="modeSelect">Mode: </label>
+            <select id="modeSelect" onchange="updateMode()">
+                <option>normal</option>
+                <option>damped</option>
+            </select>
+            <label id="dampingInputLabel" for="dampingInput" style="display: none;">Damping coefficient: </label>
+            <input id="dampingInput" type="number" style="display: none;">
             <canvas id="pendulumCanvas" width="800px" height="800px"></canvas>
         </div>
         <script>
-            let t = 0.0;
             setInterval(()=>
                 {
                     draw(t);
