@@ -5,7 +5,7 @@ const pixelLength = length*300; //px
 // get angle of pendulum at time t
 function f(t) {
     let g = 9.81; //m/s^2
-    let initialAngle = Math.PI; //rad
+    let initialAngle = Math.PI/2+Math.PI/4; //rad
     let frequency = Math.sqrt(g / length);
 
     return initialAngle * Math.cos(frequency*t);
@@ -20,7 +20,7 @@ function draw(t) {
     ctx.lineWidth = 4;
 
     ctx.beginPath();
-    let [x,y] = [canvas.width/2,canvas.height/4];
+    let [x,y] = [canvas.width/2,canvas.height/3];
     ctx.arc(x,y,5,0,Math.PI*2);
     ctx.moveTo(x,y);
     
