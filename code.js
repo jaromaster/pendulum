@@ -2,6 +2,7 @@
 const length = 0.1; //m
 const pixelLength = length*3000; //px
 const g = 9.81; //m/s^2
+const pendulumColor = "rgb(89, 172, 228)";
 
 // global vars
 let t = 0.0;
@@ -19,11 +20,11 @@ function fDamped(t) {
 
 
 // draw pendulum
-function draw(t) {
-    const canvas = document.getElementById("pendulumCanvas");
-    const ctx = canvas.getContext("2d");
+function draw(t,ctx) {
     ctx.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
     ctx.lineWidth = 4;
+    ctx.strokeStyle = pendulumColor;
+    ctx.fillStyle = pendulumColor;
 
     ctx.beginPath();
     let [x,y] = [canvas.width/2,canvas.height/3];

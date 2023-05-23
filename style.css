@@ -1,5 +1,18 @@
+body {
+    background-color: rgb(73, 73, 58);
+    /* color: rgb(89, 172, 228); */
+}
+
+input, label {
+    font-size: larger;
+    color: white;
+    background-color: rgb(73, 73, 58);
+    border-radius: 4px;
+}
+
 #pendulumCanvas {
-    border: 1px solid black;
+    margin-top: 0.5rem;
+    border-top: 4px solid white;
 }
 
 div {
