@@ -1,21 +1,11 @@
 // constants
-const length = 1; //m
-const pixelLength = length*300; //px
-const dampingCoeff = 0.3;
+const length = 0.1; //m
+const pixelLength = length*3000; //px
 const g = 9.81; //m/s^2
 
 // global vars
 let t = 0.0;
-let mode = "normal";
-
-
-// get angle of pendulum at time t
-function f(t) {
-    let initialAngle = Math.PI/2+Math.PI/4; //rad
-    let frequency = Math.sqrt(g / length);
-
-    return initialAngle * Math.cos(frequency*t);
-}
+let dampingCoeff = 0.3;
 
 
 // get angle of pendulum at time t (damped)
@@ -40,11 +30,7 @@ function draw(t) {
     ctx.arc(x,y,5,0,Math.PI*2);
     ctx.moveTo(x,y);
     
-
     let angle = fDamped(t); // get angle for time t
-    if (mode == "normal") {
-        angle = f(t);
-    }
     let deltaX = Math.sin(angle)*pixelLength;
     let deltaY = Math.cos(angle)*pixelLength;
     x+=deltaX;
@@ -60,17 +46,8 @@ function draw(t) {
 }
 
 
-// update pendulum mode (normal / damped)
-function updateMode() {
-    mode = document.getElementById("modeSelect").value;
+// update damping coefficient
+function updateCoeff() {
+    dampingCoeff = document.getElementById("dampingInput").value;
     t = 0;
-
-    if(mode == "damped") {
-        document.getElementById("dampingInputLabel").style = "display: inline";
-        document.getElementById("dampingInput").style = "display: inline";
-    }
-    else {
-        document.getElementById("dampingInputLabel").style = "display: none";
-        document.getElementById("dampingInput").style = "display: none";
-    }
 }
