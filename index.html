@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pendulum</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="code.js"></script>
+    </head>
+    <body>
+        <div>
+            <canvas id="pendulumCanvas" width="800px" height="800px"></canvas>
+        </div>
+        <script>
+            let t = 0.0;
+            setInterval(()=>
+                {
+                    draw(t);
+                    t+=0.001;
+                },1);
+        </script>
+    </body>
+</html>

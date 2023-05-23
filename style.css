@@ -1,0 +1,9 @@
+#pendulumCanvas {
+    border: 1px solid black;
+}
+
+div {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
