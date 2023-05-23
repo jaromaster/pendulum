@@ -1,12 +1,12 @@
 // constants
-const length = 0.1; //m
-const pixelLength = length*3000; //px
+const length = 0.2; //m
+const pixelLength = length*1500; //px
 const g = 9.81; //m/s^2
 const pendulumColor = "rgb(89, 172, 228)";
 
 // global vars
 let t = 0.0;
-let dampingCoeff = 0.3;
+let dampingCoeff = 0;
 
 
 // get angle of pendulum at time t (damped)
