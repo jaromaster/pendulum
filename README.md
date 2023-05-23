@@ -1,3 +1,7 @@
 # Pendulum
 
-### simulate a small pendulum adjustable different damping coefficients
+### simulate a small pendulum with adjustable damping coefficients
+
+## TODO
+- input field for initial angle
+- fix performance-issues
